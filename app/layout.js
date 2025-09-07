@@ -1,5 +1,13 @@
 import './globals.css'
 import Header from '../components/Header'
+import localFont from 'next/font/local'
+
+
+const vazirFont = localFont({
+  src: '../public/vazirfont/vazir.ttf'
+})
+
+
 
 // export const metadata = {
 //   title: 'Create Next App',
@@ -22,9 +30,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        
+        className={vazirFont.className}
       >
-        <Header/>
+        <Header />
         {children}
       </body>
     </html>

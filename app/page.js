@@ -1,13 +1,26 @@
+import { getFetch } from '@/utils/fetch';
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaPlus } from "react-icons/fa6";
+import ProductsTab from '@/components/Products/ProductsTab';
+import { BsShop } from "react-icons/bs";
+import { TiSocialInstagram } from "react-icons/ti";
+import { TiSocialPinterestCircular } from "react-icons/ti";
+import { SlSocialYoutube } from "react-icons/sl";
+import { TiSocialTwitter } from "react-icons/ti";
 
-export default function Home() {
+
+
+export default async function Home() {
+
+  // const productsTab = await getFetch('/products/products-tabs')
+  // console.log(productsTab);
+  const products = await getFetch('/products/products-tabs')
+
   return (
-    <div className="font-sans">
+    < div className="font-sans" >
 
       {/* Parallax Section 1 */}
-      <div className="relative h-screen overflow-hidden">
+      < div className="relative h-screen overflow-hidden" >
         <div
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{ backgroundImage: "url('/pictures/foodpic4.jpg')" }}
@@ -15,81 +28,40 @@ export default function Home() {
           <div className="absolute inset-0  bg-opacity-50"></div>
         </div>
 
-        <div className="relative z-10 h-full flex flex-col items-center justify-center ">
-
-          <div className='absolute pr-12 pl-70 pt-55 pb-50 top-0 left-150 text-right bg-gradient-to-l from-gray-950 to-100% text-gray-100'>
-            <h1 className="text-3xl font-bold pb-10">به وبسایت ما خوش آمدید</h1>
-            <p className="text-lg leading-relaxed mb-4 text-right">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، <br />
-              چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،
-              و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده
-            </p>
+        <div className="relative z-10 h-full flex flex-col items-center justify-center">
+          <div
+            className="
+              absolute text-right
+              right-0 bottom-0 top-0
+              w-full sm:w-4/5 md:w-3/5 lg:w-1/2
+              2xl:pl-60 xl:pl-40
+              bg-gradient-to-l from-gray-950 to-100% text-gray-100
+            "
+          >
+            <div className="pt-10 max-sm:pt-40 sm:pt-40 md:pt-40 lg:pt-40 xl:pt-40 px-4 sm:px-8 md:px-16 lg:px-20 xl:px-20">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold pb-6 sm:pb-10">به وبسایت ما خوش آمدید</h1>
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-4 text-right">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، <br />
+                چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،
+                و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده
+              </p>
+            </div>
           </div>
-
         </div>
-      </div>
+      </div >
 
-      {/* Content Section */}
-      <div className="bg-gradient-to-r from-stone-800 via-yellow-900 to-stone-800  py-20 px-4 text-stone-400">
+      {/* menu Section */}
+      < div className="bg-gradient-to-r from-stone-800 via-yellow-900 to-stone-800  py-20 px-4 text-stone-400" >
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">منو</h2>
-
-          <div className="flex flex-row justify-center items-center  gap-5">
-
-            <div className="flex flex-col items-center shadow-xl hover:shadow-lg hover:scale-105 transition-transform p-3  rounded-2xl bg-zinc-800">
-              <Image
-                className='rounded-2xl mb-5'
-                src="/foods/food1.jpg"
-                alt="food"
-                width={150}
-                height={150} />
-              <p className=''>food 1</p>
-            </div>
-
-            <div className="flex flex-col items-center p-3  rounded-2xl bg-zinc-800 hover:shadow-lg hover:scale-105 transition-transform">
-              <Image
-                className='rounded-2xl mb-5'
-                src="/foods/food1.jpg"
-                alt="food"
-                width={150}
-                height={150} />
-              <p className=''>food 2</p>
-            </div>
-
-            <div className="flex flex-col items-center p-3  rounded-2xl bg-zinc-800 hover:shadow-lg hover:scale-105 transition-transform">
-              <Image
-                className='rounded-2xl mb-5'
-                src="/foods/food1.jpg"
-                alt="food"
-                width={150}
-                height={150} />
-              <p className=''>food 3</p>
-            </div>
-
-            <div className="flex flex-col items-center p-3  rounded-2xl bg-zinc-800 hover:shadow-lg hover:scale-105 transition-transform">
-              <Image
-                className='rounded-2xl mb-5'
-                src="/foods/food1.jpg"
-                alt="food"
-                width={150}
-                height={150} />
-              <p className=''>food 4</p>
-            </div>
-
-            <div >
-              <Link href='/' className='flex justify-around items-center border rounded-4xl w-10 h-10 text-3xl'>
-                <FaPlus />
-              </Link>
-            </div>
-
-
-          </div>
-
+          <ProductsTab
+            tabList={products.tabList}
+            tabPanel={products.tabPanel}
+          />
         </div>
-      </div>
+      </div >
 
       {/* Parallax Section 2 */}
-      <div className="relative h-screen overflow-hidden ">
+      < div className="relative h-screen overflow-hidden " >
         <div
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{ backgroundImage: "url('/pictures/foodpic9.jpg')" }}
@@ -97,27 +69,33 @@ export default function Home() {
           <div className="absolute inset-0  bg-opacity-50"></div>
         </div>
         <div className="relative z-10 h-full flex items-center justify-center">
-          <h2 className="text-5xl font-bold text-white">Our Delicious Menu</h2>
+          <h2 className="text-5xl font-bold text-white"> درباره ما </h2>
         </div>
-      </div>
+      </div >
 
-      {/* Content Section */}
-      <div className="bg-gradient-to-r from-stone-800 via-yellow-900 to-stone-800  py-20 px-4 text-stone-400">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">About Us</h2>
-          <p className="text-lg leading-relaxed mb-4 text-right">
+      {/* About us Section */}
+      < div className="bg-gradient-to-r from-stone-800 via-yellow-900 to-stone-800  py-15 px-10 max-md:px-15 max-md:py-10 text-stone-400" >
+        <div className="max-w-4xl mx-auto flex md:flex-row-reverse flex-col lg:gap-20 max-md:gap-7">
+
+          <div className='flex flex-col gap-0 justify-center items-center text-amber-700'>
+            <BsShop className=' text-9xl max-sm:text-7xl max-lg:text-8xl' />
+            <span className=' text-6xl pl-17 max-sm:text-4xl max-sm:pl-11 max-lg:text-'>
+              yummy
+            </span>
+          </div>
+
+          {/* <h2 className="text-3xl font-bold mb-8 text-center">About Us</h2> */}
+          <p className="text-lg leading-relaxed mb-4 text-right py-10 max-sm:text-center">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
             چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،
             و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، <br />
-            شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی،
-            و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها،
-            و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+            شناخت فراوان جامعه و متخصصان را می طلبد.
           </p>
         </div>
-      </div>
+      </div >
 
       {/* Parallax Section 3 */}
-      <div className="relative h-screen overflow-hidden">
+      < div className="relative h-screen overflow-hidden" >
         <div
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{ backgroundImage: "url('/pictures/foodpic6.jpg')" }}
@@ -125,21 +103,37 @@ export default function Home() {
           <div className="absolute inset-0  bg-opacity-50"></div>
         </div>
         <div className="relative z-10 h-full flex items-center justify-center">
-          <h2 className="text-5xl font-bold text-white">Our Delicious Menu</h2>
+          <h2 className="text-5xl font-bold text-white"> تماس با ما </h2>
         </div>
-      </div>
+      </div >
 
 
-      {/* More Content */}
-      <div className="bg-gradient-to-r from-stone-800 via-yellow-900 to-stone-800  py-20 px-4 text-stone-400">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">Contact Us</h2>
-          <p className="text-lg leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+      {/* contact us section */}
+      < div className="bg-gradient-to-r from-stone-800 via-yellow-900 to-stone-800
+        py-20 px-10 max-md:py-10
+        text-stone-400
+        " >
+        <div className="max-w-4xl mx-auto flex flex-row gap-20 max-sm:gap-10 max-md:flex-col">
+
+          <div className='text-5xl cursor-pointer flex flex-row gap-7 justify-center items-center text-amber-700 '>
+            <div className='flex flex-col gap-7 '>
+              <TiSocialInstagram className='hover:scale-105 duration-300 hover:text-amber-600'/>
+              <TiSocialPinterestCircular className='hover:scale-105 duration-300 hover:text-amber-600' />
+            </div>
+            <div className='flex flex-col gap-7'>
+              <SlSocialYoutube className='hover:scale-105 duration-300 hover:text-amber-600' />
+              <TiSocialTwitter className='hover:scale-105 duration-300 hover:text-amber-600' />
+            </div>
+          </div>
+
+          {/* <h2 className="text-3xl font-bold mb-8 text-center">Contact Us</h2> */}
+          <p className="text-lg leading-relaxed mb-4 flex text-right justify-center items-center max-md:text-center">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
+            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،
+            و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
           </p>
         </div>
-      </div>
-
+      </div >
 
 
       <footer>
@@ -171,6 +165,6 @@ export default function Home() {
 
       </footer>
 
-    </div>
+    </div >
   );
 }
