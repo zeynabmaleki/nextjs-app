@@ -7,6 +7,7 @@ import { TiSocialInstagram } from "react-icons/ti";
 import { TiSocialPinterestCircular } from "react-icons/ti";
 import { SlSocialYoutube } from "react-icons/sl";
 import { TiSocialTwitter } from "react-icons/ti";
+import Contact from '@/components/Contact/Contact';
 
 
 
@@ -109,11 +110,9 @@ export default async function Home() {
 
 
       {/* contact us section */}
-      < div className="bg-gradient-to-r from-stone-800 via-yellow-900 to-stone-800
-        py-20 px-10 max-md:py-10
-        text-stone-400
-        " >
-        <div className="max-w-4xl mx-auto flex flex-row gap-20 max-sm:gap-10 max-md:flex-col">
+      < div className="bg-gradient-to-r from-stone-800 via-yellow-900 to-stone-800 py-20 px-10 max-md:py-10 text-stone-400">
+        <Contact/>
+        {/* <div className="max-w-4xl mx-auto flex flex-row gap-20 max-sm:gap-10 max-md:flex-col">
 
           <div className='text-5xl cursor-pointer flex flex-row gap-7 justify-center items-center text-amber-700 '>
             <div className='flex flex-col gap-7 '>
@@ -126,13 +125,13 @@ export default async function Home() {
             </div>
           </div>
 
-          {/* <h2 className="text-3xl font-bold mb-8 text-center">Contact Us</h2> */}
           <p className="text-lg leading-relaxed mb-4 flex text-right justify-center items-center max-md:text-center">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
             چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،
             و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
           </p>
-        </div>
+        </div> */}
+        
       </div >
 
 
