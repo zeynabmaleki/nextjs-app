@@ -1,19 +1,31 @@
 'use client'
 
-import React, { useActionState } from 'react'
-import {create} from '@/actions/contactAction'
+import React, { useActionState, useEffect } from 'react'
+import { create } from '@/actions/contactAction'
 import SubmitButton from '../SubmitButton'
+import { toast } from 'react-toastify'
+import dynamic from "next/dynamic";
+
 
 
 export default function Contact() {
     const [state, formAction] = useActionState(create, {})
 
+    useEffect(() => {
+        toast(state?.message, { type: `${state?.status}` })
+    }, [state])
+
+    const Map = dynamic(
+        () => import('./Map'),
+        { ssr: false }
+    );
+
     return (
-        <div className="flex flex-col lg:flex-row gap-10   bg-white/5 backdrop-blur-md  shadow-lg rounded-xl p-6  w-full max-w-5xl mx-auto">
+        <section id='contact' className="scroll-mt-25 flex flex-col lg:flex-row gap-10   bg-white/5 backdrop-blur-md  shadow-lg rounded-xl p-6  w-full max-w-5xl mx-auto">
 
             {/* Map Placeholder */}
-            <div className="flex-1 min-h-[300px] bg-white/5 backdrop-blur-md shadow-lg rounded-xl p-6  flex items-center justify-center">
-                <span className="text-gray-500">اینجا نقشه قرار می‌گیرد</span>
+            <div className="map_container flex-1 min-h-[300px] bg-white/5 backdrop-blur-md shadow-lg rounded-xl p-6  flex items-center justify-center">
+                <Map />
             </div>
 
             {/* Contact Form */}
@@ -24,14 +36,12 @@ export default function Contact() {
                     type="text"
                     placeholder="نام "
                     className="bg-white/5 text-right rounded-md p-2 pr-3 focus:outline-none focus:ring-2 focus:ring-stone-500"
-                    required
                 />
                 <input
                     name='email'
                     type="email"
                     placeholder="ایمیل "
                     className="bg-white/5 text-right rounded-md p-2  pr-3 focus:outline-none focus:ring-2 focus:ring-stone-500 "
-                    required
                 />
                 <input
                     name='subject'
@@ -45,11 +55,10 @@ export default function Contact() {
                     placeholder="پیام "
                     rows={5}
                     className="bg-white/5 text-right rounded-md p-2  pr-3 focus:outline-none focus:ring-2 focus:ring-stone-500"
-                    required
                 />
-                <SubmitButton title=" ارسال پیام "/>
+                <SubmitButton title=" ارسال پیام " />
             </form>
 
-        </div>
+        </section>
     )
 }

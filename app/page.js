@@ -8,7 +8,7 @@ import { TiSocialPinterestCircular } from "react-icons/ti";
 import { SlSocialYoutube } from "react-icons/sl";
 import { TiSocialTwitter } from "react-icons/ti";
 import Contact from '@/components/Contact/Contact';
-
+import Footer from '@/components/Footer'
 
 
 export default async function Home() {
@@ -75,7 +75,7 @@ export default async function Home() {
       </div >
 
       {/* About us Section */}
-      < div className="bg-gradient-to-r from-stone-800 via-yellow-900 to-stone-800  py-15 px-10 max-md:px-15 max-md:py-10 text-stone-400" >
+      < div id='about' className="lg:scroll-mt-30 scroll-mt-14 bg-gradient-to-r from-stone-800 via-yellow-900 to-stone-800  py-15 px-10 max-md:px-15 max-md:py-10 text-stone-400" >
         <div className="max-w-4xl mx-auto flex md:flex-row-reverse flex-col lg:gap-20 max-md:gap-7">
 
           <div className='flex flex-col gap-0 justify-center items-center text-amber-700'>
@@ -111,7 +111,7 @@ export default async function Home() {
 
       {/* contact us section */}
       < div className="bg-gradient-to-r from-stone-800 via-yellow-900 to-stone-800 py-20 px-10 max-md:py-10 text-stone-400">
-        <Contact/>
+        <Contact />
         {/* <div className="max-w-4xl mx-auto flex flex-row gap-20 max-sm:gap-10 max-md:flex-col">
 
           <div className='text-5xl cursor-pointer flex flex-row gap-7 justify-center items-center text-amber-700 '>
@@ -131,39 +131,29 @@ export default async function Home() {
             و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
           </p>
         </div> */}
-        
+
       </div >
 
 
-      <footer>
+      <div>
         {/* Parallax Section 3 */}
         <div className="relative h-screen overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center bg-fixed"
             style={{ backgroundImage: "url('/pictures/foodpic5.jpg')" }}
           >
-            {/* <div className="absolute inset-0  bg-opacity-50"></div> */}
           </div>
 
           <div className="relative z-10 h-full flex flex-col items-center justify-center ">
-
-            {/* <div className="absolute pl-150 top-0 bottom-0 left-0 bg-gradient-to-r from-stone-900 to-50%">
-            </div>
-
-            <div className="absolute pr-150 top-0 bottom-0 right-0 bg-gradient-to-l from-stone-900 to-50%">
-            </div> */}
-
             <div className="absolute pb-15 pt-150 bottom-0 right-0 left-0 flex justify-center bg-gradient-to-t from-stone-900 to-50% text-gray-100">
-              <p className="text-lg leading-relaxed">
+              {/* <p className="text-lg leading-relaxed">
                 made by zeynab maleki rad
-              </p>
+              </p> */}
+              <Footer/>
             </div>
-
           </div>
         </div>
-
-      </footer>
-
+      </div>
     </div >
   );
 }

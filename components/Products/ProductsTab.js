@@ -10,7 +10,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 export default function ProductsTab({ tabList, tabPanel }) {
     return (
 
-        <div className='flex flex-col justify-center items-center'>
+        <div id='menu' className=' scroll-mt-15 flex flex-col justify-center items-center'>
             <h2 className="text-3xl font-bold mb-8 text-center">منو</h2>
 
             <Tabs>

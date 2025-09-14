@@ -1,6 +1,7 @@
 import './globals.css'
 import Header from '../components/Header'
 import localFont from 'next/font/local'
+import Toastify from '@/components/libraries/Toastify'
 
 
 const vazirFont = localFont({
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
       >
         <Header />
         {children}
+        <Toastify/>
       </body>
     </html>
   );
