@@ -42,7 +42,7 @@ export default function ProductsTab({ tabList, tabPanel }) {
                 </div>
             </Tabs>
 
-            <Link href='/' className='mt-10' > مشاهده بیشتر </Link>
+            <Link href='/menu' className='mt-10' > مشاهده بیشتر </Link>
 
         </div>
     )

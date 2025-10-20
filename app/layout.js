@@ -2,6 +2,7 @@ import './globals.css'
 import Header from '../components/Header'
 import localFont from 'next/font/local'
 import Toastify from '@/components/libraries/Toastify'
+import NextNprogress from '@/components/libraries/NextNprogress'
 
 
 const vazirFont = localFont({
@@ -33,9 +34,11 @@ export default function RootLayout({ children }) {
         // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         className={vazirFont.className}
       >
-        <Header />
-        {children}
-        <Toastify/>
+        <NextNprogress>
+          <Header />
+          {children}
+          <Toastify />
+        </NextNprogress>
       </body>
     </html>
   );
