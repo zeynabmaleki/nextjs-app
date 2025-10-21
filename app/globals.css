@@ -27,7 +27,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 } */
 
-.Toastify__toast-body {
+/* .Toastify__toast-body {
   font-family: "Vazir", sans-serif !important;
   direction: rtl;
+} */
+
+
+
+/* Font is loaded with next/font/local in layout.js (vazirFont.className).
+   Keep minimal body styles here; do not redefine @font-face to avoid conflicts. */
+
+body {
+  background-color: #f9f9f9;
 }

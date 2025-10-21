@@ -10,7 +10,7 @@ import { MdOutlineMail } from "react-icons/md";
 
 export default function Footer() {
     return (
-        <footer className='flex flex-col items-center'>
+        <footer className='flex flex-col items-center bg-zinc-800 py-15'>
 
             <div className='grid grid-cols-3 gap-15 justify-between items-center mb-10'>
                 <div className='flex flex-col justify-around items-center gap-3'>

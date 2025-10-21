@@ -9,10 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "leaflet": "^1.9.4",
+    "leaflet": "^1.8.0",
     "leaflet-defaulticon-compatibility": "^0.1.2",
     "next": "15.4.6",
-    "next-nprogress-bar": "^2.4.7",
+    "next-nprogress-bar": "^2.1.2",
     "postcss": "^8.5.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",

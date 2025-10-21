@@ -11,13 +11,13 @@ export default function ProductsTab({ tabList, tabPanel }) {
     return (
 
         <div id='menu' className=' scroll-mt-15 flex flex-col justify-center items-center'>
-            <h2 className="text-3xl font-bold mb-8 text-center">منو</h2>
+            <h2 className="text-3xl font-bold mb-5 text-center">منو</h2>
 
             <Tabs>
                 <TabList>
                     <ul id='tabList' className='flex flex-row sm:gap-10 gap-5 justify-center items-center'>
                         {tabList.map((list, index) => (
-                            <Tab key={index} className=' hover:text-amber-600 duration-500 hover:scale-105 focus:bg-stone-800 rounded-3xl py-2 px-2 focus:text-stone-300 outline-0 cursor-pointer '>
+                            <Tab key={index} className=' hover:text-amber-400 font-semibold duration-500 hover:scale-105 focus:bg-stone-800 rounded-3xl py-2 px-2 focus:text-stone-300 outline-0 cursor-pointer '>
                                 {list}
                             </Tab>
                         ))}
@@ -25,7 +25,7 @@ export default function ProductsTab({ tabList, tabPanel }) {
                 </TabList>
 
 
-                <div id='tabPanel' className="mt-15">
+                <div id='tabPanel' className="mt-10">
                     <div>
                         {tabPanel.map((panel, index) => (
                             <TabPanel key={index}>
@@ -42,7 +42,7 @@ export default function ProductsTab({ tabList, tabPanel }) {
                 </div>
             </Tabs>
 
-            <Link href='/menu' className='mt-10' > مشاهده بیشتر </Link>
+            {/* <Link href='/menu' className='mt-10' > مشاهده بیشتر </Link> */}
 
         </div>
     )
