@@ -19,7 +19,7 @@ export default function Map() {
                 shadowUrl: 'images/map/marker-shadow.png'
             })
         }).addTo(map)
-            .bindPopup('<b>webprog</b>').openPopup();
+            .bindPopup('<b>chichi food</b>').openPopup();
     }, [])
 
 
