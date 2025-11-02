@@ -24,7 +24,7 @@ export default function Header() {
 
                 <div className='flex flex-row lg:gap-7 gap-4 justify-between'>
                     {user ? (
-                        <Link href='/auth/login' className='flex flex-row gap-2 p-1 sm:border sm:border-amber-400 rounded-xl'>
+                        <Link href='/profile' className='flex flex-row gap-2 p-1 sm:border sm:border-amber-400 rounded-xl'>
                             <CgProfile className='sm:text-2xl text-3xl' />
                             <span className='max-sm:hidden px-2'> پروفایل </span>
                         </Link>
